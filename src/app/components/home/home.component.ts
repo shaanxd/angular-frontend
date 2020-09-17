@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Product from 'src/app/models/product.model';
+import { ProductApiService } from 'src/app/services/product-api.service';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   images : {src: String, alt: String}[] = []
+  products: Product[] = []
+  productsLoading: Boolean = true;
+  productsError: String = null;
 
-  constructor() { }
+  constructor(private productApiService: ProductApiService) { }
 
   ngOnInit(): void {
     this.images = [
@@ -21,6 +26,24 @@ export class HomeComponent implements OnInit {
         alt: "Sample"
       }
     ]
+    this.onGetProductsFromApi();
+  }
+
+  onGetProductsFromApi() {
+    this.productsLoading = true;
+    this.productsError = null;
+
+    this.productApiService.getProducts().subscribe(val => {
+      this.products = [...val];
+      setTimeout(() => {
+        this.productsLoading = false;
+      }, 1000)
+    }, err => {
+      this.productsError = err;
+      setTimeout(() => {
+        this.productsLoading = false;
+      }, 1000)
+    })
   }
 
 }

@@ -1,4 +1,29 @@
 <div class="home-root">
+    <ng-container *ngIf="productsLoading; then renderLoading; else renderNext"></ng-container>
+</div>
+<ng-template #renderLoading>
+    <div class="loading-root">
+        <div class="spinner-border text-muted " role="status">
+        </div>
+        <p class="lead text-muted">Loading</p>
+    </div>
+</ng-template>
+<ng-template #renderNext>
+    <ng-container *ngIf="productsError; then renderError; else renderScreen"></ng-container>
+</ng-template>
+<ng-template #renderError>
+    <div class="loading-root">
+        <p class="lead text-muted">{{ productsError }}</p>
+    </div>
+</ng-template>
+<ng-template #renderScreen>
+    <div class="container">
+        <div class="row no-gutters product-div">
+            <div class="col-3" *ngFor="let items of products">
+                <app-product [product]="items"></app-product>
+            </div>
+        </div>
+    </div>
     <div class="jumbotron">
         <h1 class="display-4 text-center">Welcome!</h1>
         <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -6,4 +31,4 @@
         <p class="text-center text-muted lead">Hope your enjoy your stay!</p>
     </div>
     <app-home-carousel [images]="images"></app-home-carousel>
-</div>
+</ng-template>

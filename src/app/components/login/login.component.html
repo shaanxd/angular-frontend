@@ -2,11 +2,11 @@
 
 </ng-container>
 <ng-template #renderForm>
-    <div class="root-div bg-dark">
+    <div class="root-div bg-light">
         <div class="card" style="width: 100%; max-width: 540px;">
             <div class="card-body">
-                <h1 class="display-4 text-center">Login</h1>
-                <p class="lead text-muted text-center">Hello there, Welcome to sample app. Please login to continue.</p>
+                <p class="card-title display-4 text-center text-muted">Login</p>
+                <small class="text-muted text-center" style="display: block;">Hello there, Welcome to sample app. Please login to continue.</small>
                 <hr class="my-4">
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)" class="login-form">
                     <div class="form-group">

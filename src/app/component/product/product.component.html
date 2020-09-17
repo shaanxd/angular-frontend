@@ -1,0 +1,13 @@
+<div class="card root-div" (click)="onProductClick()">
+    <img [src]="product.thumbnail" [alt]="product.name" class="card-img-top"/>
+    <div class="card-body">
+        <p class="card-title lead">{{ product.name }}</p>
+        <small class="text-muted description">{{ product.description }}</small>
+    </div>
+    <div class="card-footer">
+        <div class="btn-group">
+            <button class="btn btn-primary btn-sm">View</button>
+            <button class="btn btn-secondary btn-sm">Add to cart</button>
+        </div>
+    </div>
+</div>

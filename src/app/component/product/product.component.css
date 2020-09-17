@@ -1,0 +1,18 @@
+.root-div {
+    margin: 10px;
+    box-sizing: border-box;
+    border-radius: 0px;
+    display: flex;
+}
+
+img {
+    border-radius: 0px;
+}
+
+.description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+}

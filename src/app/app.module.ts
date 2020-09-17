@@ -16,6 +16,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { HomeCarouselComponent } from './components/home/home-carousel/home-carousel.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductComponent } from './component/product/product.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoginComponent } from './components/login/login.component';
     NotFoundComponent,
     NavigationMenuComponent,
     HomeCarouselComponent,
-    LoginComponent
+    LoginComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
