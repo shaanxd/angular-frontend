@@ -12,5 +12,10 @@ export class ProductApiService {
     const endpoint = "products/";
     return this.coreApiService.get(endpoint, null);
   }
+
+  getProduct(id: String) {
+    const endpoint = `products/${id}`;
+    return this.coreApiService.get(endpoint, null);
+  }
   
 }

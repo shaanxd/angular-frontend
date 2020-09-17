@@ -1,4 +1,4 @@
-<div class="home-root">
+<div class="home-root bg-dark">
     <ng-container *ngIf="productsLoading; then renderLoading; else renderNext"></ng-container>
 </div>
 <ng-template #renderLoading>
@@ -17,18 +17,18 @@
     </div>
 </ng-template>
 <ng-template #renderScreen>
+    <app-home-carousel [images]="images"></app-home-carousel>
+    <div class="jumbotron bg-dark">
+        <h1 class="display-4 text-center text-light">Welcome!</h1>
+        <p class="lead text-center text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <hr class="my-4 bg-light">
+        <p class="text-center lead text-white">Hope your enjoy your stay!</p>
+    </div>
     <div class="container">
         <div class="row no-gutters product-div">
             <div class="col-3" *ngFor="let items of products">
-                <app-product [product]="items"></app-product>
+                <app-product-card [product]="items"></app-product-card>
             </div>
         </div>
     </div>
-    <div class="jumbotron">
-        <h1 class="display-4 text-center">Welcome!</h1>
-        <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <hr class="my-4">
-        <p class="text-center text-muted lead">Hope your enjoy your stay!</p>
-    </div>
-    <app-home-carousel [images]="images"></app-home-carousel>
 </ng-template>

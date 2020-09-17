@@ -16,7 +16,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { HomeCarouselComponent } from './components/home/home-carousel/home-carousel.component';
 import { LoginComponent } from './components/login/login.component';
-import { ProductComponent } from './component/product/product.component';
+import { ProductComponent } from './components/product/product.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductComponent } from './component/product/product.component';
     NavigationMenuComponent,
     HomeCarouselComponent,
     LoginComponent,
-    ProductComponent
+    ProductComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

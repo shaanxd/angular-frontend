@@ -1,0 +1,44 @@
+<div class="root-div">
+    <ng-container *ngIf="productLoading; then renderLoading; else renderNext"></ng-container>
+</div>
+<ng-template #renderLoading>
+    <div class="other-div">   
+        <div class="spinner-border text-muted " role="status"></div>
+        <p class="lead text-muted">Loading</p>
+    </div>
+</ng-template>
+<ng-template #renderNext>
+    <ng-container *ngIf="productError; then renderError; else renderProduct"></ng-container>
+</ng-template>
+<ng-template #renderError>
+    <div class="other-div">
+        <p class="lead text-muted">{{ productError }}</p>
+    </div>
+</ng-template>
+<ng-template #renderProduct>
+    <div class="">
+        <div class="details-container">
+            <div class="carousel-div">
+                <ngb-carousel *ngIf="product">
+                    <ng-template ngbSlide *ngFor="let image of product.images">
+                        <div class="picsum-img-wrapper">
+                            <img [src]="image" [alt]="product.name"/>
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+            </div>
+            <div class="details-div bg-dark">
+                <h1 class="display-4 text-center text-light">{{ product.name }}</h1>
+                <small class="text-white">{{ product.description }}</small>
+                <h1 class="display-4 text-danger" style="margin-top: 20px;">USD {{ product.price }} <small class=text-white-50>only</small></h1>
+                <p><small class="text-white-50">Only</small> <small class="text-danger"> {{ product.stock }} </small><small class="text-white-50">pieces available!</small></p>
+                <div class="button-container">
+                    <button class="btn btn-primary" (click)="addProductToCart()">Add to cart</button>
+                    <button class="btn btn-danger">Favourite</button>
+                    <button class="btn btn-light">Write a review</button>
+                    <button class="btn btn-outline-light">Add an inquiry</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

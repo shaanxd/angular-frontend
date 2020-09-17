@@ -8,6 +8,7 @@ import { AddTasksComponent } from './components/add-tasks/add-tasks.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductComponent } from './components/product/product.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,10 @@ const routes: Routes = [
     path: "login", component: LoginComponent,
   },
   {
-    path: "*", component: NotFoundComponent
+    path: "product/:id", component: ProductComponent,
+  },
+  {
+    path: "**", component: NotFoundComponent
   }
 ];
 

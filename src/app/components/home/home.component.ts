@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Product from 'src/app/models/product.model';
+import { Product } from 'src/app/models';
 import { ProductApiService } from 'src/app/services/product-api.service';
 
 @Component({
@@ -18,11 +18,15 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.images = [
       {
-        src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/252820/1600x700-1.jfif",
+        src: "https://via.placeholder.com/1000x300.png?text=Sample+Carousel+1",
         alt: "Sample"
       },
       {
-        src: "https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg",
+        src: "https://via.placeholder.com/1000x300.png?text=Sample+Carousel+2",
+        alt: "Sample"
+      },
+      {
+        src: "https://via.placeholder.com/1000x300.png?text=Sample+Carousel+3",
         alt: "Sample"
       }
     ]

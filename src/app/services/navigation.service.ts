@@ -12,4 +12,11 @@ export class NavigationService {
       this.router.navigate(['']);
   }
 
+  navigateToProduct(id: String) {
+    this.router.navigate(['product', id])
+  }
+
+  navigateToLogin() {
+    this.router.navigate(['login']);
+  }
 }

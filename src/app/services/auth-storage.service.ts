@@ -42,14 +42,4 @@ export class AuthStorageService {
   setLoading(loading: Boolean) {
     this.loading.next(loading);
   }
-
-  setSubscriptions(authObserver: any, loadingObserver: any) {
-    this.authentication.subscribe(authObserver);
-    this.loading.subscribe(loadingObserver);
-  }
-
-  unSubscribe() {
-    this.authentication.unsubscribe();
-    this.loading.unsubscribe();
-  }
 }

@@ -1,0 +1,41 @@
+.root-div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.other-div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.other-div p {
+    display: block;
+    margin-top: 20px;
+}
+
+.details-container {
+    display: flex;
+}
+
+.details-div {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.jumbotron {
+    margin-bottom: 0px !important;
+    border-radius: 0px;
+}
+
+button {
+    margin-top: 20px;
+    margin-right: 10px;
+}
